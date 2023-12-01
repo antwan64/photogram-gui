@@ -11,13 +11,13 @@ class PhotosController < ApplicationController
 
     def show
     
-    url_photos = params.fetch("path_username")
+    url_photo = params.fetch("path_id")
 
-    matching_usernames = User.where({ :username => url_username })
+    matching_photos = Photo.where({ :id => url_photo })
 
-    @the_user = matching_usernames.first
+    @the_photo = matching_photos.first
 
-    render({ :template => "user_templates/show"})
+    render({ :template => "photo_templates/show"})
 
     
     
