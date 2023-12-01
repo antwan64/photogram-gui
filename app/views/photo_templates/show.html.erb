@@ -73,133 +73,25 @@
     </th>
   </tr>
 
-
+<% @the_photo.comments.each do |a_comment| %>
     <tr>
       <td>
-        robin
+        <%= a_comment.commenter.username %>
+      </td>
+
+
+
+      <td>
+        <%= a_comment.body %>
       </td>
 
       <td>
-        The mind is not a vessel to be filled but a fire to be kindled.
-      </td>
-
-      <td>
-        2019-04-29 22:16:30 UTC
+        <%= a_comment.created_at %>
+    
       </td>
     </tr>
-
-    <tr>
-      <td>
-        galen
-      </td>
-
-      <td>
-        A few vices are sufficient to darken many virtues.
-      </td>
-
-      <td>
-        2019-04-29 19:00:58 UTC
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        jolie
-      </td>
-
-      <td>
-        Beware the barrenness of a busy life.
-      </td>
-
-      <td>
-        2019-04-29 16:24:49 UTC
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        anisa
-      </td>
-
-      <td>
-        There was never a genius without a tincture of madness.
-      </td>
-
-      <td>
-        2019-04-29 03:52:01 UTC
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        galen
-      </td>
-
-      <td>
-        Most people would rather give than get affection.
-      </td>
-
-      <td>
-        2019-04-29 02:11:53 UTC
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        augustine
-      </td>
-
-      <td>
-        Only the educated are free.
-      </td>
-
-      <td>
-        2019-04-28 15:58:31 UTC
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        trina
-      </td>
-
-      <td>
-        It is impossible to begin to learn that which one thinks one already knows.
-      </td>
-
-      <td>
-        2019-04-28 05:55:11 UTC
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        diego
-      </td>
-
-      <td>
-        The mind is not a vessel to be filled but a fire to be kindled.
-      </td>
-
-      <td>
-        2019-04-27 17:29:48 UTC
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        roselee
-      </td>
-
-      <td>
-        Know how to listen, and you will profit even from those who talk badly.
-      </td>
-
-      <td>
-        2019-04-27 05:00:39 UTC
-      </td>
-    </tr>
-</table>
+<% end %>
+    
 
 <h3>Add a new comment</h3>
 
