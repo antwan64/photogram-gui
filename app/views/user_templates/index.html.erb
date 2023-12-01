@@ -1,13 +1,4 @@
- <li>
-          <a href="/users">Users</a>
-        </li>
-        <li>
-          <a href="/photos">Photos</a>
-        </li>
-      </ul>
-    </nav>
-
-    <h1>List of users</h1>
+<h1>List of users</h1>
     <form action="/add_user" method="post">
   <label for="browser_username">Username</label>
   <input id="browser_username" type="text" name="input_username" placeholder="Enter a username...">
@@ -42,6 +33,7 @@
       </td>
 
       <td>
+      <a href="/users/<%= a_user.username %>">
         Show details
         </td>
   </tr>
