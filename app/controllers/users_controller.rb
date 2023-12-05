@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
 
-  url_username = params.fetch("path_username")
+    url_username = params.fetch("path_username")
 
     matching_usernames = User.where({ :username => url_username })
 
@@ -21,21 +21,19 @@ class UsersController < ApplicationController
 
   def update
 
-    the_id = params.fetch("modify_id")
+    user_id = params.fetch("modify_id")
 
-    matching_users = User.where({ :id => the_id})
+    matching_users = User.where({ :id => user_id })
 
-    the_user = matching_users.first 
+    the_user = matching_users.first
       
     input_username = params.fetch("input_username")
 
     the_user.username = input_username
 
     the_user.save
-
-
       
-    redirect_to("/users/" + the_user.id.to_s)
+    redirect_to("/users/" + the_user.username)
 
 
   end
