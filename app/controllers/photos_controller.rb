@@ -88,20 +88,23 @@ class PhotosController < ApplicationController
         input_author_id = params.fetch("input_author_id")
         input_comment = params.fetch("input_comment")
         
-        @input_photo_id = input_photo_id
-        @a_new_comment = Comment.new
-  
-        @a_new_comment.photo_id = input_photo_id
-        @a_new_comment.author_id = input_author_id
-        @a_new_comment.body = input_comment
-  
-        @a_new_comment.save
         
-        if input_photo_id == nil
+
+        a_new_comment = Comment.new
+  
+        a_new_comment.photo_id = input_photo_id
+        a_new_comment.author_id = input_author_id
+        a_new_comment.body = input_comment
+  
+        a_new_comment.save
+
+        
+        
+        if @the_photo == nil
           redirect_to("/404")
 
         else
-          redirect_to("/photos/" + input_photo_id.to_s)
+          redirect_to("/photos/" + a_new_comment.photo_id.to_s)
 
         end
         
