@@ -95,18 +95,17 @@ class PhotosController < ApplicationController
         a_new_comment.photo_id = input_photo_id
         a_new_comment.author_id = input_author_id
         a_new_comment.body = input_comment
-  
-        a_new_comment.save
 
-        
-        
-        if @the_photo == nil
+        matching_photo = Photo.where({ :id => input_photo_id}).first
+
+        if matching_photo == nil
           redirect_to("/404")
-
         else
-          redirect_to("/photos/" + a_new_comment.photo_id.to_s)
-
+          a_new_comment.save
+          redirect_to("/photos/" + input_photo_id)
         end
+
+      
         
 
 
